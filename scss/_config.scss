@@ -1,7 +1,7 @@
-$primary-color: rgb(31, 31, 31);
-$secondary-color: #74b15c;
+$primary-color: #2d2f31;
+$secondary-color: #6eb700;
 $show-home-image: true;
-$home-image: url(../img/home_bg_2.jpg);
+$home-image: url(../img/home_bg.jpg);
 $background-opacity: 0.9;
 
 // Mixin
@@ -15,6 +15,7 @@ $background-opacity: 0.9;
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
+      // background-position: bottom center;
 
       &:after {
         content: "";
