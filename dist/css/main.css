@@ -24,7 +24,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.94;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -62,6 +62,8 @@
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
+    .menu .nav-item:not(:last-child) {
+      margin-bottom: 10px; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
@@ -71,13 +73,17 @@
     position: relative;
     font-size: 30px;
     text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
+    padding: 1rem 2rem;
+    font-weight: 400;
     color: #fff;
     text-decoration: none;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #4f8400 50%);
+    background-size: 235%;
     transition: all 0.5s ease-out; }
-    .menu .nav-link:hover {
-      color: #6eb700; }
+    .menu .nav-link:hover, .menu .nav-link:active {
+      color: #cccccc;
+      background-position: 100%;
+      transform: translateX(1rem); }
 
 .nav-item:nth-child(1) {
   transition: 0.1s; }
@@ -113,7 +119,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(45, 47, 49, 0.9); }
+      background: rgba(45, 47, 49, 0.96); }
 
 h1,
 h2,
@@ -124,6 +130,10 @@ h3 {
   h2.lg-heading,
   h3.lg-heading {
     font-size: 6rem; }
+  h1.md-heading,
+  h2.md-heading,
+  h3.md-heading {
+    font-size: 4rem; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
@@ -157,41 +167,80 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+    main#home .fa-twitter,
+    main#home .fa-linkedin,
+    main#home .fa-github {
+      color: #fff;
+      transition: all 0.5s ease-out; }
+
+#about {
+  background: #5e6266; }
 
 .about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr); }
+  padding: 3rem 0;
+  height: 460px;
+  width: 100%; }
+  .about-info .bio-image {
+    margin: 0;
+    border-radius: 50%;
+    border: #6eb700 3px solid;
+    width: 100%;
+    float: left; }
+    .about-info .bio-image img {
+      width: 100%; }
+  .about-info .bio {
+    width: 100%;
+    float: right;
+    font-size: 1.5rem;
+    padding-left: 2.5rem; }
 
-.bio-image {
-  grid-area: bioimage;
+.skillset {
   margin: auto;
-  border-radius: 50%;
-  border: #6eb700 3px solid; }
+  padding-top: 2rem;
+  width: 90%; }
+  .skillset .skill-frontend {
+    background: #6eb700; }
+  .skillset .skill-backend {
+    grid-area: skillbackend; }
+  .skillset .skill-other {
+    grid-area: skillother; }
+  .skillset .skill {
+    background: #212224;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 5px; }
+    .skillset .skill-info {
+      max-width: 60%;
+      margin-left: 1rem;
+      text-align: left; }
+      .skillset .skill-info h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.5; }
+    .skillset .skill h3 {
+      color: #eee;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 1rem; }
+  .skillset .icon-item {
+    width: 150px;
+    text-align: center;
+    margin-bottom: 10px; }
+    .skillset .icon-item img {
+      height: 80px;
+      max-width: 100%; }
 
-.bio {
-  grid-area: bio;
-  font-size: 1.5rem; }
-
-.job-1 {
-  grid-area: job1; }
-
-.job-2 {
-  grid-area: job2; }
-
-.job-3 {
-  grid-area: job3; }
-
-.job {
-  background: #393c3e;
-  padding: 0.5rem;
-  border-bottom: #6eb700 5px solid; }
+.col-4 {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1.5rem 0; }
 
 .projects {
   display: grid;
   grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: 1fr; }
   .projects img {
     width: 100%;
     border: 3px #fff solid; }
@@ -236,6 +285,45 @@ main {
   background: #abafb2;
   color: #333; }
 
+/* Tech Brand Colors */
+.fa-html5 {
+  color: #e34f26; }
+
+.fa-css3 {
+  color: #1572b6; }
+
+.fa-js-square {
+  color: #f0db4f; }
+
+.fa-php {
+  color: #8892be; }
+
+.fa-node {
+  color: #6cc24a; }
+
+.fa-react {
+  color: #00d8ff; }
+
+.fa-github {
+  color: #4078c0; }
+  .fa-github:hover {
+    color: #4078c0 !important; }
+
+.fa-wordpress {
+  color: #21759b; }
+
+.fa-sass {
+  color: #c69; }
+
+.fa-gulp {
+  color: #e74a4a; }
+
+.fa-twitter:hover {
+  color: #1da1f2 !important; }
+
+.fa-linkedin:hover {
+  color: #0077b5 !important; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -245,10 +333,29 @@ main {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .about-info .bio-image {
+    width: 30%;
+    float: left; }
+  .about-info .bio {
+    width: 70%;
+    float: right; }
+  .col-4 {
+    grid-template-columns: repeat(5, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
+    grid-template-columns: repeat(4, 1fr); }
+  .about-info .bio-image {
+    width: 30%;
+    float: left; }
+  .about-info .bio {
+    width: 70%;
+    float: right; }
+  .skillset .skill-info {
+    max-width: 80%;
+    text-align: left; }
+  .col-4 {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
@@ -278,14 +385,29 @@ main {
       background-size: cover;
       width: 150px;
       height: 150px; }
-  .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr; }
   .projects {
+    grid-template-columns: repeat(2, 1fr); }
+  .about-info .bio {
+    padding: 0; }
+  .skillset .skill-info {
+    max-width: 100%;
+    text-align: center; }
+  .col-4 {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; }
+    margin-top: 10vh;
+    font-size: 4.75rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .col-4 {
+    grid-template-columns: 1fr; }
+  .icon-item {
+    width: 150px;
+    margin: auto; }
+    .icon-item img {
+      max-width: 100%; }
+  .skillset .skill-info {
+    max-width: 100%;
+    text-align: center; } }

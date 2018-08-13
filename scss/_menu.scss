@@ -43,7 +43,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.94;
   visibility: hidden;
 
   &.show {
@@ -98,6 +98,9 @@
   }
 
   .nav-item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
     transform: translate3d(600px, 0, 0);
     @include easeOut;
 
@@ -116,18 +119,26 @@
     position: relative;
     font-size: 30px;
     text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
+    padding: 1rem 2rem;
+    font-weight: 400;
     color: set-text-color($primary-color);
     text-decoration: none;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      darken($secondary-color, 10%) 50%
+    );
+    background-size: 235%;
     @include easeOut;
-
-    &:hover {
-      color: $secondary-color;
+    &:hover,
+    &:active {
+      color: darken(#fff, 20);
+      background-position: 100%;
+      transform: translateX(1rem);
     }
   }
 }
-
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {

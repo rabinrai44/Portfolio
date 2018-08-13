@@ -26,6 +26,10 @@ h3 {
     font-size: 6rem;
   }
 
+  &.md-heading {
+    font-size: 4rem;
+  }
+
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
@@ -71,54 +75,111 @@ main {
     h1 {
       margin-top: 20vh;
     }
+
+    .fa-twitter,
+    .fa-linkedin,
+    .fa-github {
+      color: #fff;
+      @include easeOut;
+    }
   }
 }
 
 // About
+#about {
+  background: lighten($primary-color, 20);
+}
 .about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas:
-    "bioimage bio bio"
-    "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
+  padding: 3rem 0;
+  height: 460px;
+  width: 100%;
+
+  .bio-image {
+    margin: 0;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    width: 100%;
+    float: left;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .bio {
+    width: 100%;
+    float: right;
+    font-size: 1.5rem;
+    padding-left: 2.5rem;
+  }
 }
 
-.bio-image {
-  grid-area: bioimage;
+// Skills
+.skillset {
   margin: auto;
-  border-radius: 50%;
-  border: $secondary-color 3px solid;
+  padding-top: 2rem;
+  width: 90%;
+  .skill-frontend {
+    background: $secondary-color;
+  }
+
+  .skill-backend {
+    grid-area: skillbackend;
+  }
+
+  .skill-other {
+    grid-area: skillother;
+  }
+
+  .skill {
+    background: darken($primary-color, 5);
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 5px;
+
+    &-info {
+      max-width: 60%;
+      margin-left: 1rem;
+      text-align: left;
+      h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.5;
+      }
+    }
+    h3 {
+      color: #eee;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+  }
+
+  .icon-item {
+    width: 150px;
+    text-align: center;
+    margin-bottom: 10px;
+
+    img {
+      height: 80px;
+      max-width: 100%;
+    }
+  }
 }
 
-.bio {
-  grid-area: bio;
-  font-size: 1.5rem;
+// Columns Setup
+.col-4 {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1.5rem 0;
 }
-
-.job-1 {
-  grid-area: job1;
-}
-
-.job-2 {
-  grid-area: job2;
-}
-
-.job-3 {
-  grid-area: job3;
-}
-
-.job {
-  background: lighten($primary-color, 5);
-  padding: 0.5rem;
-  border-bottom: $secondary-color 5px solid;
-}
-
 // Portfolio/Projects
 .projects {
   display: grid;
   grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
 
   img {
     width: 100%;
@@ -181,6 +242,56 @@ main {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
+}
+
+// Brand colors
+/* Tech Brand Colors */
+.fa-html5 {
+  color: #e34f26;
+}
+.fa-css3 {
+  color: #1572b6;
+}
+.fa-js-square {
+  color: #f0db4f;
+}
+.fa-php {
+  color: #8892be;
+}
+.fa-node {
+  color: #6cc24a;
+}
+.fa-react {
+  color: #00d8ff;
+}
+.fa-github {
+  color: #4078c0;
+  &:hover {
+    color: #4078c0 !important;
+  }
+}
+.fa-wordpress {
+  color: #21759b;
+}
+
+.fa-sass {
+  color: #c69;
+}
+
+.fa-gulp {
+  color: #e74a4a;
+}
+
+.fa-twitter {
+  &:hover {
+    color: #1da1f2 !important;
+  }
+}
+
+.fa-linkedin {
+  &:hover {
+    color: #0077b5 !important;
+  }
 }
 
 // Footer

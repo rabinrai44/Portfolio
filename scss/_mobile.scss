@@ -4,11 +4,48 @@
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .about-info {
+    .bio-image {
+      width: 30%;
+      float: left;
+    }
+
+    .bio {
+      width: 70%;
+      float: right;
+    }
+  }
+  .col-4 {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 // Desktop & Laptops
 @include large {
   .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about-info {
+    .bio-image {
+      width: 30%;
+      float: left;
+    }
+
+    .bio {
+      width: 70%;
+      float: right;
+    }
+  }
+  .skillset {
+    .skill-info {
+      max-width: 80%;
+      text-align: left;
+    }
+  }
+
+  .col-4 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -54,17 +91,24 @@
     }
   }
 
-  .about-info {
-    grid-template-areas:
-      "bioimage"
-      "bio"
-      "job1"
-      "job2"
-      "job3";
-    grid-template-columns: 1fr;
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .projects {
+  .about-info {
+    .bio {
+      padding: 0;
+    }
+  }
+
+  .skillset {
+    .skill-info {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  .col-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -73,9 +117,30 @@
 @include small {
   main#home h1 {
     margin-top: 10vh;
+    font-size: 4.75rem;
   }
 
   .projects {
     grid-template-columns: 1fr;
+  }
+
+  .col-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-item {
+    width: 150px;
+    margin: auto;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .skillset {
+    .skill-info {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 }
