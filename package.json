@@ -1,14 +1,17 @@
 {
-  "name": "modern_portfolio",
+  "name": "Portfolio",
   "version": "1.0.0",
   "description": "Personal portfolio",
   "main": "index.js",
+  "homepage": "https://rabinrai44.github.io/Portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Rabin Rai",
   "license": "ISC",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "node-sass": "^4.9.3"
   }
 }
