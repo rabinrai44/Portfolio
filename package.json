@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal portfolio",
   "main": "index.js",
-  "homepage": "https://rabinrai44.github.io/Portfolio",
+  "homepage": "https://rabinrai44.github.io",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
